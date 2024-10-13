@@ -11,41 +11,94 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @Table(name = "tb_empleado")
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class EmpleadoEntity {
-	
+
 	@Id
 	@Column(name = "dni_empleado", nullable = false)
 	private String dniEmpleado;
-	
+
 	@Column(name = "nombre_empleado", nullable = false)
 	private String nombreEmpleado;
-	
+
 	@Column(name = "apellido_empleado", nullable = false)
 	private String apellidoEmpleado;
-	
+
 	@Column(name = "fecha_nacimiento", nullable = false)
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private LocalDate fNacicimiento;
-	
+
 	@Column(name = "direccion", nullable = false)
 	private String direccion;
-	
+
 	@Column(name = "correo", nullable = false)
 	private String correo;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "fk_area", nullable = false)
 	private AreaEntity areaEntity;
+
+	public String getDniEmpleado() {
+		return dniEmpleado;
+	}
+
+	public String getNombreEmpleado() {
+		return nombreEmpleado;
+	}
+
+	public String getApellidoEmpleado() {
+		return apellidoEmpleado;
+	}
+
+	public LocalDate getfNacicimiento() {
+		return fNacicimiento;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public AreaEntity getAreaEntity() {
+		return areaEntity;
+	}
+
+	public void setDniEmpleado(String dniEmpleado) {
+		this.dniEmpleado = dniEmpleado;
+	}
+
+	public void setNombreEmpleado(String nombreEmpleado) {
+		this.nombreEmpleado = nombreEmpleado;
+	}
+
+	public void setApellidoEmpleado(String apellidoEmpleado) {
+		this.apellidoEmpleado = apellidoEmpleado;
+	}
+
+	public void setfNacicimiento(LocalDate fNacicimiento) {
+		this.fNacicimiento = fNacicimiento;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public void setAreaEntity(AreaEntity areaEntity) {
+		this.areaEntity = areaEntity;
+	}
+
 }

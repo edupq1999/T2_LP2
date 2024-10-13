@@ -1,5 +1,13 @@
 package pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.service;
 
-public interface AreaService {
+import java.util.List;
 
+import pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.entity.AreaEntity;
+
+public interface AreaService {
+	List<AreaEntity>listarAreas();
+	AreaEntity buscarAreaPorId(int id);
+	void crearArea(AreaEntity newArea);
+	void actualizarArea(AreaEntity updatedArea);
+	void eliminarArea(int id);
 }
