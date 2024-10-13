@@ -3,11 +3,13 @@ package pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.entity.EmpleadoEntity;
 import pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.repository.EmpleadoRepository;
 import pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.service.EmpleadoService;
 
+@Service
 public class EmpleadoServiceImpl implements EmpleadoService {
 
 	@Autowired
