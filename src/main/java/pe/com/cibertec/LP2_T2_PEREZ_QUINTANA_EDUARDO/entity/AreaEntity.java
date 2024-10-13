@@ -1,4 +1,4 @@
-package pe.com.cibertec.entity;
+package pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "tb_area")
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class AreaEntity {
 	
 	@Id

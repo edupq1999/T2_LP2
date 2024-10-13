@@ -1,4 +1,4 @@
-package pe.com.cibertec.entity;
+package pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.entity;
 
 import java.time.LocalDate;
 
@@ -27,7 +27,7 @@ public class EmpleadoEntity {
 	
 	@Id
 	@Column(name = "dni_empleado", nullable = false)
-	private Integer dniEmpleado;
+	private String dniEmpleado;
 	
 	@Column(name = "nombre_empleado", nullable = false)
 	private String nombreEmpleado;
