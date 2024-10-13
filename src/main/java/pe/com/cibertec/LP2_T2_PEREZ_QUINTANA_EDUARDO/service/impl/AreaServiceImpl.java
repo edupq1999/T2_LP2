@@ -22,7 +22,7 @@ public class AreaServiceImpl implements AreaService{
 	}
 
 	@Override
-	public AreaEntity buscarAreaPorId(int id) {
+	public AreaEntity buscarAreaPorId(Integer id) {
 		// TODO Auto-generated method stub
 		AreaEntity areaEncontrada = areaRepository.findById(id).get();;
 		return areaEncontrada;
@@ -44,7 +44,7 @@ public class AreaServiceImpl implements AreaService{
 	}
 
 	@Override
-	public void eliminarArea(int id) {
+	public void eliminarArea(Integer id) {
 		// TODO Auto-generated method stub
 		AreaEntity areaToDelete = buscarAreaPorId(id);
 		if(areaToDelete != null){

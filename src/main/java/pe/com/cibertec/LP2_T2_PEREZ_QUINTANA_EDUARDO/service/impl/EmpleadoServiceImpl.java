@@ -22,11 +22,9 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	}
 
 	@Override
-	public EmpleadoEntity buscarEmpleadoPorDni(String dni) {
-		// TODO Auto-generated method stub
-		EmpleadoEntity empleadoEncontrado = empleadoRepository.findById(dni).get();
-		return empleadoEncontrado;
-	}
+    public List<EmpleadoEntity> buscarEmpleadosPorDni(String dni) {
+        return empleadoRepository.findByDniEmpleadoContaining(dni);
+    }
 
 	@Override
 	public void crearEmpleado(EmpleadoEntity newEmpleado) {
@@ -37,7 +35,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	@Override
 	public void actualizarEmpleado(EmpleadoEntity updatedEmpleado) {
 		// TODO Auto-generated method stub
-		EmpleadoEntity empleado = buscarEmpleadoPorDni(updatedEmpleado.getDniEmpleado());
+		EmpleadoEntity empleado = buscarEmpleadosPorDni(updatedEmpleado.getDniEmpleado()).get(0);
 		if (empleado != null) {
 			empleado.setApellidoEmpleado(updatedEmpleado.getApellidoEmpleado());
 			empleado.setNombreEmpleado(updatedEmpleado.getNombreEmpleado());
@@ -46,6 +44,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 			empleado.setDireccion(updatedEmpleado.getDireccion());
 			empleado.setCorreo(updatedEmpleado.getCorreo());
 			empleado.setAreaEntity(updatedEmpleado.getAreaEntity());
+			empleado.setAreaId(updatedEmpleado.getAreaId());
 			empleadoRepository.save(empleado);
 		}
 
@@ -54,7 +53,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 	@Override
 	public void eliminarEmpleado(String dni) {
 		// TODO Auto-generated method stub
-		EmpleadoEntity empleado = buscarEmpleadoPorDni(dni);
+		EmpleadoEntity empleado = buscarEmpleadosPorDni(dni).get(0);
 		if (empleado != null) {
 			empleadoRepository.delete(empleado);
 		}

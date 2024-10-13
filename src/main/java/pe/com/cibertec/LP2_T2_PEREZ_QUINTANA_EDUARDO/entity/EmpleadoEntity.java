@@ -32,7 +32,7 @@ public class EmpleadoEntity {
 	private String apellidoEmpleado;
 
 	@Column(name = "fecha_nacimiento", nullable = false)
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fNacicimiento;
 
 	@Column(name = "direccion", nullable = false)
@@ -40,10 +40,13 @@ public class EmpleadoEntity {
 
 	@Column(name = "correo", nullable = false)
 	private String correo;
+	
+	@Column(name = "fk_area", nullable = false)
+    private Integer areaId;
 
 	@ManyToOne
-	@JoinColumn(name = "fk_area", nullable = false)
-	private AreaEntity areaEntity;
+    @JoinColumn(name = "fk_area", referencedColumnName = "area_id", insertable = false, updatable = false)
+    private AreaEntity areaEntity;
 
 	public String getDniEmpleado() {
 		return dniEmpleado;
@@ -100,5 +103,14 @@ public class EmpleadoEntity {
 	public void setAreaEntity(AreaEntity areaEntity) {
 		this.areaEntity = areaEntity;
 	}
+
+	public Integer getAreaId() {
+		return areaId;
+	}
+
+	public void setAreaId(Integer areaId) {
+		this.areaId = areaId;
+	}
+	
 
 }

@@ -6,8 +6,8 @@ import pe.com.cibertec.LP2_T2_PEREZ_QUINTANA_EDUARDO.entity.AreaEntity;
 
 public interface AreaService {
 	List<AreaEntity>listarAreas();
-	AreaEntity buscarAreaPorId(int id);
+	AreaEntity buscarAreaPorId(Integer id);
 	void crearArea(AreaEntity newArea);
 	void actualizarArea(AreaEntity updatedArea);
-	void eliminarArea(int id);
+	void eliminarArea(Integer id);
 }
